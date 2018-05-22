@@ -12,7 +12,10 @@ class Point {
   public:
     int x;
     int y;
+    /* Default constructor with parameters */
     Point(int = 0, int = 0);
+    /* Copy constructor */
+    Point(const Point &p2);
 };
 
 Point::Point(int X, int Y) {
@@ -20,11 +23,17 @@ Point::Point(int X, int Y) {
   y = Y;
 };
 
+Point::Point(const Point &p2){
+  x = p2.x;
+  y = p2.y; 
+}
+
 /* Circle */
 class Circle: public Figure {
   public:
     Point center;
     int r;
+    /* Constructor with parameters */
     Circle(Point, int);
 };
 
@@ -40,6 +49,8 @@ class Polygon: public Figure {
     vector <Point> vertexes;
     int relation(Circle);
     Polygon(vector<Point>);
+    /* Destructor */
+    ~Polygon();
 };
 
 Polygon::Polygon(vector <Point> VERTEXES) {
