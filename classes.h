@@ -50,7 +50,7 @@ class Polygon: public Figure {
     int relation(Circle);
     Polygon(vector<Point>);
     /* Destructor */
-    ~Polygon();
+    virtual ~Polygon();
 };
 
 Polygon::Polygon(vector <Point> VERTEXES) {
